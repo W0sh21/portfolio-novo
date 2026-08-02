@@ -424,9 +424,9 @@ body {
   transform: none;
 }
 
-.grid-projetos .reveal:nth-child(2) { transition-delay: 0.1s; }
-.grid-projetos .reveal:nth-child(3) { transition-delay: 0.2s; }
-.grid-projetos .reveal:nth-child(4) { transition-delay: 0.3s; }
+.cards-grid .reveal:nth-child(2) { transition-delay: 0.1s; }
+.cards-grid .reveal:nth-child(3) { transition-delay: 0.2s; }
+.cards-grid .reveal:nth-child(4) { transition-delay: 0.3s; }
 
 .grid-servicos .reveal:nth-child(2) { transition-delay: 0.1s; }
 .grid-servicos .reveal:nth-child(3) { transition-delay: 0.2s; }
@@ -434,10 +434,16 @@ body {
 /* =====================
    PROJETOS
    ===================== */
-.grid-projetos {
+.cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 24px;
+  
+}
+
+/* Centraliza o card que fica sozinho na última linha (ex: 4º card com grade de 3 colunas) */
+.cards-grid .card-projeto:last-child:nth-child(3n+1) {
+  grid-column: 2;
 }
 
 .card-projeto {
@@ -776,7 +782,7 @@ body {
 
   .hero-title { font-size: 38px; }
 
-  .grid-projetos,
+  .cards-grid,
   .grid-servicos {
     grid-template-columns: 1fr;
   }
